@@ -6,20 +6,415 @@
     <title>Document</title>
 </head>
 
-<style> 
+<style>
+     body { 
+            background-color : lightblue;
+        }
+
+        header { 
+            background-color: lightskyblue;
+            color: whitesmoke;
+            text-align: center;
+
+        }
+
+        #slogan { 
+            font-style: italic;
+            text-align: center;
+        }
+
+        em { 
+            position: absolute; 
+            top : 17%; 
+            bottom : 90%; 
+            left : 42%; 
+            right : 11%;
+        }
+
+        ul { 
+            list-style-type: none;
+            margin : 0px; 
+            padding : 0px;
+            background-color: lightskyblue; 
+        }
+
+        li { 
+            float: left;
+            clear : none;
+            background-color: lightskyblue;
+        }
+
+        li a { 
+            display : block;
+            padding : 5px; 
+            text-decoration: none;
+            background-color: lightskyblue;
+        }
+
+        li a:link { 
+            text-decoration : line;
+            background-color: lightskyblue;
+        }
+
+        li a:active { 
+            color : beige;
+            background-color: lightskyblue;
+        }
+
+        li a:hover { 
+            color: white;
+            background-color: lightskyblue;
+        }
+
+        li a:visited { 
+            color: whitesmoke;
+            background-color: lightskyblue;
+        }
+
+        #introduction { 
+            text-align : center;
+        }
 
 </style>
-<body>
 
+
+<body>
     <header> 
-        
+        <h1> TRAVEL NOOK </h1>
+        <p id = "slogan"> Book your travels with us. </p>
+
+        <em> 
+            <nav>
+                <ul>
+                    <li> <a href = "#"> Home </a> </li>
+                    <li> <a href = "./secondPage.html"> --- </a></li>
+                </ul> 
+            </nav>
+        </em>
     </header>
 
+    <br> 
+    <br> 
+    <br>
 
+    <p id = "introduction"> TRAVEL NOOK is a travel website
+        that aims to lend a hand to the Filipino people, along
+        with their foreign friends to book accommodations in 
+        Taguig City. Enjoy.
+    </p>
 
-    <script> 
+    <br> 
+    <br> 
+    <br>
+        <form id = "signUpForm" >
+            <fieldset form = "signUpForm"> 
+                <legend> Sign-up Form : </legend>
     
-    </script>
+                    <label for = "fullName"> Name : </label>     
+                    <input type = "text" id = "fullName" name = "fullName" 
+                    placeholder = "Full Name" onfocus= "funcnameOnFocus ()" 
+                    onblur = "funcNameOnBlur ()">
+    
+                    <br>
+                    <br>
+    
+                    <label for = "userName"> Prefered UserName : </label>
+                    <input type = "text" id = "userName" name = "userName" 
+                    placeholder = "UserName" onfocus = "funcuserNameOnFocus ()"
+                    onblur = "funcuserNameOnBlur ()"> 
+    
+                    <br>
+                    <br>
+    
+                    <label for = "pWord"> Password : </label>
+                    <input type = "password" id = "pWord" name = "pWord" 
+                    placeholder="Password" onfocus = "funcuserPasswordOnFocus ()"
+                    onblur = "funcuserPasswordOnBlur ()"> 
+    
+                    <br>
+                    <br>
+    
+                    <label for = "userEmail"> Email : </label>
+                    <input type = "email" id = "userEmail" name = "userEmail" 
+                    placeholder = "Email" onfocus = "funcuserE_mailOnFocus ()"
+                    onblur = "funcuserE_mailOnBlur ()"> 
+    
+                    <br>
+                    <br>
+                    
+                    <label for = "address"> Address :  </label>
+                    <input type = "text" id = "address" name = "address" placeholder = "Address">
+                    
+                    <br>
+                    <br>
+    
+    
+                    <label for = "interests"> Interests :  </label>
+                    <textarea id = "interests" name = "interests" 
+                    rows = "5" cols = "50" onfocus = "funcUserInterestsOnFocus ()"
+                    onblur = "funcUserInterestsOnBlur ()"> </textarea>
+    
+                    <br>
+                    <br> 
+    
+                    <label for = "userGender"> Gender : </label>
+                    <select name = "gender" id = "userGender" onchange = "funcGender ()">
+                        <option value = "Male"> Male </option>
+                        <option value = "Female"> Female </option>
+                        <option value = "Prefer Not To Mention"> Prefer Not To Mention</option>
+                    </select>
+    
+                    <br>
+                    <br>
+    
+                    <input type = "submit" value = "Submit form" 
+                    onclick = "funcFinalSummaryOfAnswers ()" 
+                    >
+    
+       
+    
+    
+            </fieldset>
+            
+            
+            <fieldset id = "summary">
+            <legend> Summary Of Answers : </legend> 
+                <div>
+                    <label> Full Name : </label>
+                    <p id="pFullName"> </p>
+                    <label> Username : </label>
+                    <p id = "pUserName"> </p>
+                    <label> Password : </label>
+                    <p id = "pPWord"> </p>
+                    <label> Email : </label>
+                    <p id = "pUserEmail"> </p>
+                    <label> Address : </label>
+                    <p id = "pAddress"> </p>
+                    <label> Interests : </label>
+                    <p id = "pParagraph"> </p>
+                    <label> Gender : </label>
+                    <p id = "pGender"> </p>
+    
+                </div>
+                <input type = "reset" 
+                    value = "Clear" 
+                    onclick = "funcClear ()">
+    
+            </fieldset>
+        </form>
+    
+        <script> 
+            let userFullName = document.getElementById("fullName"); 
+            let userNM = document.getElementById("userName");
+            let userPassword = document.getElementById ("pWord"); 
+            let userEML = document.getElementById ("userEmail");
+            let userAddress = document.getElementById ("address");
+            let userPar = document.getElementById ("interests");
+            let form = document.getElementById ("signUpForm");
+            let gender = document.getElementById("userGender");
+    
+        
+    
+            userFullName.addEventListener("focus" ,function (a) { 
+                a.preventDefault ()
+                funcnameOnFocus ();
+            })
+    
+            function funcnameOnFocus () {
+                if (userFullName.value == "") { 
+                    userFullName.style.borderColor = "green";
+                }
+            }   
+    
+            userFullName.addEventListener("blur" ,function (b) { 
+                b.preventDefault ()
+                funcNameOnBlur ();
+            })
+    
+            function funcNameOnBlur () {
+                if (userFullName.value == "") { 
+                    userFullName.style.borderColor = "red";
+                }
+    
+            }
+    
+            //
+            //
+            //
+    
+            userNM.addEventListener("focus" ,function (c) { 
+                c.preventDefault ()
+                funcuserNameOnFocus ();
+            })
+    
+            function funcuserNameOnFocus () {
+                if (userNM.value == "") { 
+                    userNM.style.borderColor = "green";
+                }
+    
+            }   
+    
+            userNM.addEventListener("blur" ,function (d) { 
+                d.preventDefault ()
+                funcuserNameOnBlur ();
+            })
+    
+            function funcuserNameOnBlur () {
+                if (userNM.value == "") { 
+                    userNM.style.borderColor = "red";
+                }
+    
+            }
+    
+            //
+            //
+            //
+    
+            userPassword.addEventListener("focus" ,function (e) { 
+                e.preventDefault ()
+                funcuserPasswordOnFocus ();
+            })
+    
+            function funcuserPasswordOnFocus () {
+                if (userPassword.value == "") { 
+                    userPassword.style.borderColor = "green";
+                }
+    
+            }   
+    
+            userPassword.addEventListener("blur" ,function (f) { 
+                f.preventDefault ()
+                funcuserPasswordOnBlur ();
+            })
+    
+            function funcuserPasswordOnBlur () {
+                if (userPassword.value == "") { 
+                    userPassword.style.borderColor = "red";
+                }
+            }
+    
+            //
+            //
+            //
+    
+    
+            userEML.addEventListener("focus" ,function (g) { 
+                g.preventDefault ()
+                funcuserE_mailOnFocus ();
+            })
+    
+            function funcuserE_mailOnFocus () {
+                if (userEML.value == "") { 
+                    userEML.style.borderColor = "green";
+                }
+    
+            }   
+    
+            userEML.addEventListener("blur" ,function (h) { 
+                h.preventDefault ()
+                funcuserE_mailOnBlur ();
+            })
+    
+            function funcuserE_mailOnBlur () {
+                if (userEML.value == "") { 
+                    userEML.style.borderColor = "red";
+                }
+            }
+    
+            //
+            //
+            //
+    
+            userAddress.addEventListener("focus" ,function (i) { 
+                i.preventDefault ()
+                funcuserAddressOnFocus ();
+            })
+    
+            function funcuserAddressOnFocus () {
+                if (userAddress.value == "") { 
+                    userAddress.style.borderColor = "green";
+                }
+    
+            }   
+    
+            userAddress.addEventListener("blur" ,function (j) { 
+                j.preventDefault ()
+                funcuserAddressOnBlur ();
+            })
+    
+            function funcuserAddressOnBlur () {
+                if (userAddress.value == "") { 
+                    userAddress.style.borderColor = "red";
+                }
+            }
+    
+            //
+            //
+            //
+    
+            userPar.addEventListener("focus" ,function (k) { 
+                k.preventDefault ()
+                funcUserInterestsOnFocus ();
+            })
+    
+            function funcUserInterestsOnFocus () {
+                if (userPar.value == "") { 
+                    userPar.style.borderColor = "green";
+                }
+    
+            }   
+    
+            userPar.addEventListener("blur" ,function (l) { 
+                l.preventDefault ()
+                funcUserInterestsOnBlur ();
+            })
+    
+            function funcUserInterestsOnBlur () {
+                if (userPar.value == "") { 
+                    userPar.style.borderColor = "red";
+                }
+            }
+    
+    
+            //
+            //
+            //
+    
+    
+            form.addEventListener("submit", function (x) { 
+                x.preventDefault ()
+                funcFinalSummaryOfAnswers ()
+            })
+    
+            
+            function funcFinalSummaryOfAnswers () { 
+                document.getElementById("pFullName").innerHTML = userFullName.value;
+                document.getElementById("pUserName").innerHTML = userNM.value;
+                document.getElementById("pPWord").innerHTML = userPassword.value; 
+                document.getElementById("pUserEmail").innerHTML = userEML.value; 
+                document.getElementById("pAddress").innerHTML = userAddress.value; 
+                document.getElementById("pParagraph").innerHTML = userPar.value;
+            }
+    
+            //
+            //
+            //
+    
+            gender.addEventListener("submit", function (z) { 
+                z.preventDefault ()
+                funcGender ()
+            })
+    
+            function funcGender () { 
+                document.getElementById("pGender").innerHTML = gender.value;
+            }
+    
+            function funcClear () { 
+                document.getElementById("signUpForm").reset();
+            }
+    
+        </script>
+
     
 </body>
 </html>
