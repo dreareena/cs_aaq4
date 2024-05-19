@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+         body { 
+            background-color : lightblue;
+        }
+
+        header { 
+            background-color: lightskyblue;
+            color: whitesmoke;
+            text-align: center;
+
+        }
+
+        #slogan { 
+            font-style: italic;
+            text-align: center;
+        }
+
+        em { 
+            position: absolute; 
+            top : 17%; 
+            bottom : 90%; 
+            left : 47%; 
+            right : 11%;
+        }
+
+        ul { 
+            list-style-type: none;
+            margin : 0px; 
+            padding : 0px;
+            background-color: lightskyblue; 
+        }
+
+        li { 
+            float: left;
+            clear : none;
+            background-color: lightskyblue;
+        }
+
+        li a { 
+            display : block;
+            padding : 5px; 
+            text-decoration: none;
+            background-color: lightskyblue;
+        }
+
+        li a:link { 
+            text-decoration : line;
+            background-color: lightskyblue;
+        }
+
+        li a:active { 
+            color : beige;
+            background-color: lightskyblue;
+        }
+
+        li a:hover { 
+            color: white;
+            background-color: lightskyblue;
+        }
+
+        li a:visited { 
+            color: whitesmoke;
+            background-color: lightskyblue;
+        }
+
+        #introduction { 
+            text-align : center;
+        }
+
+        #deluxeRoomPrices, #familyRoomPrices, #grandGoldenSuitePrices, #standard_TypeRoomPrices { 
+            width : 491px; 
+            height : 591px;
+        }
+
+</style>
+
+
+<body>
+    <header> 
+        <h1> TRAVEL NOOK </h1>
+        <p id = "slogan"> Book your travels with us. </p>
+
+        <em> 
+            <nav>
+                <ul>
+                    <li> <a href = "./indexCS.html"> Home </a> </li>
+                    <li> <a href = "#"> Booking </a></li>
+                </ul> 
+            </nav>
+        </em>
+    </header>
+
+    <br> 
+    <br> 
+    <br>
+
+    <p id = "introduction"> TRAVEL NOOK is a travel website
+        that aims to lend a hand to the Filipino people, along
+        with their foreign friends to book accommodations in 
+        Taguig City. Enjoy.
+    </p>
+
+    <br> 
+    <br> 
+    <br> 
+
+        <form id = "bookingForm"> 
+            <fieldset form = "bookingForm"> 
+                <legend> Book Here : </legend>
+
+                <label for = "userBookingOptions"> Accommodation : </label>
+                <select name = "bookingOptions" id = "userBookingOptions"
+                >
+
+                    <option value = "sedaTaguig"> Seda </option>
+                    <option value = "grandHyattMNL"> Grand Hyatt Manila </option>
+                    <option value = "cityParkMNL"> City Park Hotel Residences Manila </option>
+                    <option value = "airBNB"> Air BNB in Taguig </option>
+                </select>
+
+                <br> 
+                <br>
+
+                <label for = "userPax"> Number of people : </label>
+                <select name = "pax" id = "userPax"> 
+                    <option value = "onePax"> 1 person </option>
+                    <option value = "twoPax"> 2 persons </option>
+                    <option value = "threePax"> 3 persons </option>
+                    <option value = "fourPax"> 4 persons </option>
+                </select>
+
+                <br> 
+                <br>
+                <br> 
+                <br>
+                
+                <fieldset>
+                <legend> Payment Form : </legend>
+
+                    <label for = "fullName"> Full name : </label>
+                    <input type = "text" id = "fullName" name = "fullName"
+                    placeholder = "Full name" onfocus = "funcNameOnFocus ()"
+                    onblur = "funcNameOnBlur ()">
+
+                    <br> 
+                    <br>
+
+                    <label for = "userName"> Username : </label>
+                    <input type = "text" id = "userName" name = "userName"
+                    placeholder = "Username" onfocus = 
+                    "funcUserNameOnFocus ()" onblur = "funcUserNameOnBlur ()">
+
+                    <br> 
+                    <br>  
+
+                    <label for = "userEmail"> Email : </label>
+                    <input type = "email" id = "userEmail" name = "userEmail"
+                    placeholder = "Email" onfocus = "funcUserEmailOnFocus ()"
+                    onblur = "funcUserEmailOnBlur ()">
+
+                    <br> 
+                    <br>
+                        
+                    <label for = "userPayentMethod"> Payment Method : </label>
+
+                    <br> 
+                    <br> 
+
+                    <select name = "paymentMethod" id = "userPaymentMethod">
+                        <option value = "gCash"> Gcash </option>
+                        <option value = "payPal"> Paypal </option>
+                        <option value = "bank"> Bank </option>
+                    </select>
+
+                    <br> 
+                    <br>
+
+                    <fieldset>
+                        <legend> Payment details </legend>
+
+                        <p> A. If you chose Gcash/ paypal in the previous question : </p>
+
+                        <br> 
+                        <br>
+                        
+                        <label for = "userNumber"> (PH) Number : </label>
+                        
+                        <br> 
+                        <br> 
+
+                        <input type = "text" id = "userNumber" name = "userNumber"
+                        placeholder = "Number" onfocus = "funcUserNumberOnFocus ()"
+                        onblur = "funcUserNumberOnBlur ()">
+                        
+                        <br>
+                        <br> 
+
+                        <p> B. If you choose "bank" on the previous option </p>
+
+                        <label for = "userPaymentOptionsBank"> Bank : </label>
+                        
+                        <br> 
+                        <br>
+                        
+                        <select name = "paymentOptionsBank" id = "userPaymentOptionsBank">
+                        <option value = "BDO"> BDO </option>
+                        <option value = "Landbank"> Landbank </option>
+                        <option value = "BPI"> BPI </option>
+                        <option value = "ChinaBank"> China Bank </option>
+                        </select>
+
+                        <br> 
+                        <br> 
+
+                        <label for = "password"> Password/ pin : </label>
+
+                        <br> 
+                        <br> 
+
+
+                        <input type = "password" id = "password" name = "password"
+                        placeholder = "Password" 
+                        onfocus = "funcUserPassWordOnFocus ()" 
+                        onblur = "funcUserPassWordOnBlur ()">
+
+
+          
+    
+                    </fieldset>
+
+                    <br> 
+                    <br>
+
+                    <label for = "roomType"> Room Type : </label>
+
+                    <p> All of these rooms are available on ALL OF THE HOTELS AT
+                        DIFFERING PRICES. If you chose the air bnb, please choose
+                        N/A (Not Applicable) on the respective choices.
+                    </p>
+
+                    <img id = "deluxeRoomPrices" src="./sweetDeluxe.png"> 
+                    <img id = "familyRoomPrices" src = "./familyRoom.png"> 
+                    <img id = "grandGoldenSuitePrices" src = "./grandGoldenSuite.png"> 
+                    <img id = "standard_TypeRoomPrices" src = "./standardRoom.png">
+                    
+                    <br> 
+                    <br>
+
+                    <select name = "roomType" id = "userRoomType"> 
+                        <option value = "sweetDeluxeRoom"> Sweet Deluxe Room (2 people) </option>
+                        <option value = "familyRoom"> Family room (4 + 1 additional people) </option>
+                        <option value = "goldenSuite"> Golden Suite (2 people) </option>
+                        <option value = "standardTypeRoom"> Standard-type room (2 people + 1 additional people) </option>
+                        <option value = "N/A"> N/A (if air bnb was chosen) </option>
+                    </select>
+
+                    <p> Upon request, The Family Room and Standard Type Room 
+                    is available to have additional people. However, please 
+                    prepare extra budeget. 
+                    </p>
+
+                    
+                </fieldset>
+
+            <br> 
+            <br>
+
+            <input type = "submit" value = "Submit form" 
+            onclick = "summary ()" >
+
+
+            </fieldset>
+
+
+
+        </form>
+
+
+
+
+
+    <script>
+        let bookingOpt = document.getElementById("userBookingOptions");
+        let pax = document.getElementById("userPax"); 
+        let userFullName = document.getElementById("fullName");
+        let user_name = document.getElementById("userName");
+        let e_mail = document.getElementById("userEmail");
+        let number = document.getElementById("userNumber"); 
+        let paymentMethod = document.getElementById("userPaymentMethod"); 
+        let passWord = document.getElementById("password"); 
+        let roomType = document.getElementById("userRoomType");
+        
+        
+        userFullName.addEventListener ("focus", function (a) {
+            a.preventDefault ()
+            funcNameOnFocus ();
+        })
+
+
+        function funcNameOnFocus () {
+            if (userFullName.value == "") { 
+                userFullName.style.borderColor = "green";
+            }
+        }   
+
+        userFullName.addEventListener("blur" ,function (b) { 
+            b.preventDefault ()
+            funcNameOnBlur ();
+        })
+
+        function funcNameOnBlur () {
+            if (userFullName.value == "") { 
+                userFullName.style.borderColor = "red";
+            }
+
+        }
+
+        //
+        //
+        //
+
+        user_name.addEventListener ("focus", function (c) {
+            c.preventDefault ()
+            funcUserNameOnFocus ();
+        })
+
+
+        function funcUserNameOnFocus () {
+            if (user_name.value == "") { 
+                user_name.style.borderColor = "green";
+            }
+        }   
+
+        user_name.addEventListener("blur" ,function (d) { 
+            d.preventDefault ()
+            funcUserNameOnBlur ();
+        })
+
+        function funcUserNameOnBlur () {
+            if (user_name.value == "") { 
+                user_name.style.borderColor = "red";
+            }
+
+        }
+
+        //
+        //
+        //
+
+        e_mail.addEventListener ("focus", function (e) {
+            e.preventDefault ()
+            funcUserEmailOnFocus ();
+        })
+
+
+        function funcUserEmailOnFocus () {
+            if (e_mail.value == "") { 
+                e_mail.style.borderColor = "green";
+            }
+        }   
+
+        e_mail.addEventListener("blur" ,function (f) { 
+            f.preventDefault ()
+            funcUserEmailOnBlur ();
+        })
+
+        function funcUserEmailOnBlur () {
+            if (e_mail.value == "") { 
+                e_mail.style.borderColor = "red";
+            }
+
+        }
+
+        //
+        //
+        //
+
+        number.addEventListener ("focus", function (g) {
+            g.preventDefault ()
+            funcUserNumberOnFocus ();
+        })
+
+
+        function funcUserNumberOnFocus () {
+            if (number.value == "") { 
+                number.style.borderColor = "green";
+            }
+        }   
+
+        number.addEventListener("blur" ,function (h) { 
+            h.preventDefault ()
+            funcUserNumberOnBlur ();
+        })
+
+        function funcUserNumberOnBlur () {
+            if (number.value == "") { 
+                number.style.borderColor = "red";
+            }
+        }
+
+        //
+        //
+        //
+
+        passWord.addEventListener ("focus", function (i) {
+            i.preventDefault ()
+            funcUserPassWordOnFocus ();
+        })
+
+
+        function funcUserPassWordOnFocus () {
+            if (passWord.value == "") { 
+                passWord.style.borderColor = "green";
+            }
+        }   
+
+        passWord.addEventListener("blur" ,function (j) { 
+            j.preventDefault ()
+            funcUserPassWordOnBlur ();
+        })
+
+        function funcUserPassWordOnBlur () {
+            if (passWord.value == "") { 
+                passWord.style.borderColor = "red";
+            }
+        }
+
+        //
+        //
+        //
+    
+        
+    
+    </script>
+    
+</body>
+</html>
