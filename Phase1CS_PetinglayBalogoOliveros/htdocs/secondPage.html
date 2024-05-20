@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Phase 1 Project_ACCOMMODATION SecondPage</title>
+    <meta name = "authors" content = "Reena, Lulyn, Leanne">
+    <meta name = "description" content = "this gives possible
+    accommodations in Taguig City">
+    <link rel = "shortcut icon" href = "../img/faviConTravelNook.jpg"> 
+    <!-- this favicon was made in CANVA :
+    link : https://www.canva.com/ -->
+
+</head>
+
+<link rel = "stylesheet" type = "text/css" href = "../css/secondPageCSS.css">
+
+<body>
+    <header> 
+        <h1> TRAVEL NOOK </h1>
+        <p id = "slogan"> Book your travels with us. </p>
+
+        <em> 
+            <nav>
+                <ul>
+                    <li> <a href = "../indexCS.html"> Home </a> </li>
+                    <li> <a href = "#"> Booking </a></li>
+                </ul> 
+            </nav>
+        </em>
+    </header>
+
+    <br> 
+    <br> 
+    <br>
+
+    <p id = "introduction"> TRAVEL NOOK is a travel website
+        that aims to lend a hand to the Filipino people, along
+        with their foreign friends to book accommodations in 
+        Taguig City. Enjoy.
+    </p>
+
+    <br> 
+    <br> 
+    <br> 
+
+        <form id = "bookingForm"> 
+            <fieldset form = "bookingForm"> 
+                <legend> Book Here : </legend>
+
+                <label for = "userBookingOptions"> Accommodation : </label>
+                <select name = "bookingOptions" id = "userBookingOptions"
+                onchange = "funcBookingOpt ()">
+                    <option value = "Seda Manila"> Seda </option>
+                    <option value = "Grand Hyatt Manila"> Grand Hyatt Manila </option>
+                    <option value = "City Park Hotel Residences Manila"> City Park Hotel Residences Manila </option>
+                    <option value = "Air BNB in Taguig"> Air BNB in Taguig </option>
+                </select>
+
+                <br> 
+                <br>
+
+                <label for = "userPax"> Number of people : </label>
+                <select name = "pax" id = "userPax"
+                onchange = "funcPax ()"> 
+                    <option value = "1 person"> 1 person </option>
+                    <option value = "2 persons"> 2 persons </option>
+                    <option value = "3 persons"> 3 persons </option>
+                    <option value = "4 persons"> 4 persons </option>
+                </select>
+
+                <br> 
+                <br>
+                <br> 
+                <br>
+                
+                <fieldset>
+                <legend> Payment Form : </legend>
+
+                    <label for = "fullName"> Full name : </label>
+                    <input type = "text" id = "fullName" name = "fullName"
+                    placeholder = "Full name" onfocus = "funcNameOnFocus ()"
+                    onblur = "funcNameOnBlur ()">
+
+                    <br> 
+                    <br>
+
+                    <label for = "userName"> Username : </label>
+                    <input type = "text" id = "userName" name = "userName"
+                    placeholder = "Username" onfocus = 
+                    "funcUserNameOnFocus ()" onblur = "funcUserNameOnBlur ()">
+
+                    <br> 
+                    <br>  
+
+                    <label for = "userEmail"> Email : </label>
+                    <input type = "email" id = "userEmail" name = "userEmail"
+                    placeholder = "Email" onfocus = "funcUserEmailOnFocus ()"
+                    onblur = "funcUserEmailOnBlur ()">
+
+                    <br> 
+                    <br>
+                        
+                    <label for = "userPayentMethod"> Payment Method : </label>
+
+                    <br> 
+                    <br> 
+
+                    <select name = "paymentMethod" id = "userPaymentMethod"
+                    onchange = "funcSummaryFinal ()">
+                        <option id = "Gcash" value = "Gcash"> Gcash </option>
+                        <option id = "Paypal" value = "Paypal"> Paypal </option>
+                        <option id = "Bank" value = "Bank"> Bank </option>
+                    </select>
+
+                    <br> 
+                    <br>
+
+                    <fieldset>
+                        <legend> Payment details </legend>
+
+                        <p> A. If you chose Gcash/ paypal in the previous question : </p>
+
+                        <br> 
+                        <br>
+                        
+                        <label for = "userNumber"> (PH) Number : </label>
+                        
+                        <br> 
+                        <br> 
+
+                        <input type = "text" id = "userNumber" name = "userNumber"
+                        placeholder = "Number" onfocus = "funcUserNumberOnFocus ()"
+                        onblur = "funcUserNumberOnBlur ()">
+                        
+                        <br>
+                        <br> 
+
+                        <p> B. If you choose "bank" on the previous option </p>
+
+                        <label for = "userPaymentOptionsBank"> Bank : </label>
+                        
+                        <br> 
+                        <br>
+                        
+                        <select name = "paymentOptionsBank" id = "userPaymentOptionsBank">
+                        <option value = "BDO"> BDO </option>
+                        <option value = "Landbank"> Landbank </option>
+                        <option value = "BPI"> BPI </option>
+                        <option value = "Chinabank"> China Bank </option>
+                        </select>
+
+                        <br> 
+                        <br> 
+
+                        <label for = "password"> Password/ pin : </label>
+
+                        <br> 
+                        <br> 
+
+
+                        <input type = "password" id = "password" name = "password"
+                        placeholder = "Password" 
+                        onfocus = "funcUserPassWordOnFocus ()" 
+                        onblur = "funcUserPassWordOnBlur ()">
+
+
+          
+    
+                    </fieldset>
+
+                    <br> 
+                    <br>
+
+                    <label for = "roomType"
+                    onchange = "funcRoomType ()"> Room Type : </label>
+
+                    <p> All of these rooms are available on ALL OF THE HOTELS AT
+                        DIFFERING PRICES. If you chose the air bnb, please choose
+                        N/A (Not Applicable) on the respective choices.
+                    </p>
+
+                    <img id = "deluxeRoomPrices" src="../img/sweetDeluxe.png"> 
+                    <!-- THIS WAS MADE IN CANVA (https://www.canva.com/) 
+                    and all elements are of canva's ownership. -->
+                    <img id = "familyRoomPrices" src = "..//img/familyRoom.png">
+                    <!-- THIS WAS MADE IN CANVA (https://www.canva.com/) 
+                    and all elements are of canva's ownership. -->
+                    <img id = "grandGoldenSuitePrices" src = "../img/grandGoldenSuite.png">
+                    <!-- THIS WAS MADE IN CANVA (https://www.canva.com/) 
+                    and all elements are of canva's ownership. --> 
+                    <img id = "standard_TypeRoomPrices" src = "../img/standardRoom.png">
+                    <!-- THIS WAS MADE IN CANVA (https://www.canva.com/) 
+                    and all elements are of canva's ownership. -->
+                    
+                    <br> 
+                    <br>
+
+                    <select name = "roomType" id = "userRoomType" onchange = "funcRoomType ()"> 
+                        <option value = "Sweet Deluxe Room For 2 guests"> Sweet Deluxe Room (2 guests) </option>
+                        <option value = "Family Room for 4 (+1 upon request 
+                        and additional payment respectively) guests"> Family room (4 + 1 additional guests) </option>
+                        <option value = "Golden Suite for 2 people."> Golden Suite (2 people) </option>
+                        <option value = "Standard-type room for 2 people (+1 upon
+                        close request and consideration respectively) guests"> Standard-type room (2 people + 1 additional people) </option>
+                        <option value = "N/A"> N/A (if air bnb was chosen) </option>
+                    </select>
+
+                    <p> Upon request, The Family Room and Standard Type Room 
+                    is available to have additional people. However, please 
+                    prepare extra budeget. 
+                    </p>
+
+                    
+                </fieldset>
+
+            <br> 
+            <br>
+
+            <input type = "submit" value = "Submit form" 
+            onclick = "summary ()" >
+
+            <fieldset id = "overallSummary">
+                <legend> Summary of details for booking : </legend>
+                <div>
+                <label> Hotel Chosen : </label>  
+                <p id="hotelChosen"> </p>
+
+                <br> 
+
+                <label> Number of guests : </label>
+                <p id="numGuests"> </p>
+
+                <br>
+
+                <label> Full name : </label>
+                <p id="user_FullName"> </p>
+
+                <br>
+
+                <label> Username : </label> 
+                <p id="user_UserName"> </p>
+
+                <br> 
+
+                <label> Email : </label>
+                <p id="eMail"> </p>
+
+                <br> 
+
+                <label> Chosen payment method : </label>
+                <p id="chosenPaymentMethod"> </p>
+                <p id = "chosenPaymentMethodSubset"></p>
+
+                <br>
+
+                <label> Room type : </label>
+                <p id="chosenRoom"> </p>
+
+                <br> 
+
+                </div>
+                </fieldset>
+
+                
+            </fieldset>
+        </fieldset>
+
+
+        </form>
+
+    <script>
+        let bookingOpt = document.getElementById("userBookingOptions");
+        let pax = document.getElementById("userPax");
+        let form = document.getElementById("bookingForm");
+        let userFullName = document.getElementById("fullName");
+        let user_name = document.getElementById("userName");
+        let e_mail = document.getElementById("userEmail");
+        let number = document.getElementById("userNumber"); 
+        let paymentOptions = document.getElementById("userPaymentMethod"); 
+        let passWord = document.getElementById("password"); 
+        let roomType = document.getElementById("userRoomType");
+        let paymentOne = document.getElementById("Gcash");
+        let paymentTwo = document.getElementById("Paypal");
+        let paymentThree = document.getElementById("Bank");
+        let paymentThreeOptions = document.getElementById("userPaymentOptionsBank");
+
+        
+        
+        userFullName.addEventListener ("focus", function (a) {
+            a.preventDefault ()
+            funcNameOnFocus ();
+        })
+
+
+        function funcNameOnFocus () {
+            if (userFullName.value == "") { 
+                userFullName.style.borderColor = "green";
+            }
+        }   
+
+        userFullName.addEventListener("blur" ,function (b) { 
+            b.preventDefault ()
+            funcNameOnBlur ();
+        })
+
+        function funcNameOnBlur () {
+            if (userFullName.value == "") { 
+                userFullName.style.borderColor = "red";
+            }
+
+        }
+
+        //
+        //
+        //
+
+        user_name.addEventListener ("focus", function (c) {
+            c.preventDefault ()
+            funcUserNameOnFocus ();
+        })
+
+
+        function funcUserNameOnFocus () {
+            if (user_name.value == "") { 
+                user_name.style.borderColor = "green";
+            }
+        }   
+
+        user_name.addEventListener("blur" ,function (d) { 
+            d.preventDefault ()
+            funcUserNameOnBlur ();
+        })
+
+        function funcUserNameOnBlur () {
+            if (user_name.value == "") { 
+                user_name.style.borderColor = "red";
+            }
+
+        }
+
+        //
+        //
+        //
+
+        e_mail.addEventListener ("focus", function (e) {
+            e.preventDefault ()
+            funcUserEmailOnFocus ();
+        })
+
+
+        function funcUserEmailOnFocus () {
+            if (e_mail.value == "") { 
+                e_mail.style.borderColor = "green";
+            }
+        }   
+
+        e_mail.addEventListener("blur" ,function (f) { 
+            f.preventDefault ()
+            funcUserEmailOnBlur ();
+        })
+
+        function funcUserEmailOnBlur () {
+            if (e_mail.value == "") { 
+                e_mail.style.borderColor = "red";
+            }
+
+        }
+
+        //
+        //
+        //
+
+        number.addEventListener ("focus", function (g) {
+            g.preventDefault ()
+            funcUserNumberOnFocus ();
+        })
+
+
+        function funcUserNumberOnFocus () {
+            if (number.value == "") { 
+                number.style.borderColor = "green";
+            }
+        }   
+
+        number.addEventListener("blur" ,function (h) { 
+            h.preventDefault ()
+            funcUserNumberOnBlur ();
+        })
+
+        function funcUserNumberOnBlur () {
+            if (number.value == "") { 
+                number.style.borderColor = "red";
+            }
+        }
+
+        //
+        //
+        //
+
+        passWord.addEventListener ("focus", function (i) {
+            i.preventDefault ()
+            funcUserPassWordOnFocus ();
+        })
+
+
+        function funcUserPassWordOnFocus () {
+            if (passWord.value == "") { 
+                passWord.style.borderColor = "green";
+            }
+        }   
+
+        passWord.addEventListener("blur" ,function (j) { 
+            j.preventDefault ()
+            funcUserPassWordOnBlur ();
+        })
+
+        function funcUserPassWordOnBlur () {
+            if (passWord.value == "") { 
+                passWord.style.borderColor = "red";
+            }
+        }
+
+        //
+        //
+        //
+
+        form.addEventListener("submit", function (z) { 
+            z.preventDefault ()
+            summary ();
+        })
+
+        function summary () {
+            document.getElementById("user_FullName").innerHTML = userFullName.value;
+            document.getElementById("user_UserName").innerHTML = user_name.value; 
+            document.getElementById("eMail").innerHTML = e_mail.value; 
+            
+        }
+
+        //
+        //
+        //
+
+        bookingOpt.addEventListener("submit", function (k) { 
+            k.preventDefault ()
+            funcBookingOpt ();
+        })
+
+        function funcBookingOpt () { 
+            document.getElementById("hotelChosen").innerHTML = bookingOpt.value;
+        }
+
+        //
+        //
+        //
+
+        pax.addEventListener("submit", function (l) { 
+            l.preventDefault ()
+            funcPax ();
+        })
+
+        function funcPax () { 
+            document.getElementById("numGuests").innerHTML = pax.value;
+        }
+
+        //
+        //
+        //
+
+        roomType.addEventListener ("submit" ,function (o) { 
+            o.preventDefault () 
+            funcRoomType ();
+        })
+
+        function funcRoomType () { 
+            document.getElementById ("chosenRoom").innerHTML = roomType.value;
+        }
+
+        //
+        //
+        //
+
+        function funcSummaryFinal () { 
+
+        let chosenPayment = paymentOptions.value;
+        
+        if (chosenPayment == paymentOne.value || chosenPayment == paymentTwo.value) {
+            document.getElementById("chosenPaymentMethod").innerHTML = paymentOptions.value;
+        }
+
+        else if (chosenPayment == paymentThree.value) {
+            document.getElementById("chosenPaymentMethod").innerHTML = paymentOptions.value + " : ";
+            document.getElementById("chosenPaymentMethodSubset").innerHTML = "Bank : " + paymentThreeOptions.value;
+        } 
+        
+        else {
+            document.getElementById("chosenPaymentMethodSubset").innerHTML = "";
+        }
+
+    }
+
+        // document.getElementById("user_RoomType").innerHTML = `Room Type: ${chosenRoom}`;
+
+    </script> 
+
+
+    </body>
+    </html>
