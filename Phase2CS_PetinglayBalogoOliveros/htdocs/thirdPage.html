@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Phase 1 Project_ACCOMMODATION SecondPage </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "authors" content = "Reena, Lulyn, Leanne">
+    <meta name = "description" content = "this gives possible
+    accommodations in Taguig City">
+    <link rel="icon" type="image/x-icon" href="../img/faviConTravelNook.jpg">    
+    <!-- this favicon was made in CANVA :
+    link : https://www.canva.com/ -->
+ 
+</head>
+
+<link rel = "stylesheet" type = "text/css" href = "../css/thirdPage.css"> 
+
+<body onload="">
+    <header> 
+        <h1> TRAVEL NOOK </h1>
+        <p id = "slogan"> Book your travels with us. </p>
+
+        <em> 
+            <nav>
+                <ul>
+                    <li> <a href = "../indexCS.html"> Home </a> </li>
+                    <li> <a href = "../htdocs/secondPage.html"> Booking </a></li>
+                    <li> <a href = "#"> Rate our page! </a></li>
+                </ul> 
+            </nav>
+        </em>
+    </header>
+
+    <br> 
+    <br> 
+    <br>
+
+    <p id = "introduction"> TRAVEL NOOK is a travel website
+        that aims to lend a hand to the Filipino people, along
+        with their foreign friends to book accommodations in 
+        Taguig City. Enjoy.
+    </p>
+
+    <br> 
+    <form id="ratingForm">
+        <fieldset> 
+            <h3> Thank you for using <span>TRAVEL NOOK</span>!</h3>
+            <h4> Please rate our booking page truthfully. </h4>
+            <h4> With 1 being the worst, and 10 being the best</h4>
+
+            <h2 id="rating"> 1 <input type="range" id = "userRating" min="1" max="10"> 10 </h2>
+
+            <h5>Any suggestion?</h5>
+
+            <span id="txtSubmit"> <textarea cols="29" rows="7" id="userExplain"
+            onchange="summaryUserMessage ()"></textarea> <br> <br>
+
+            <input type="submit" onclick="storeUserRating()" id="submit"></span> 
+        </fieldset>
+
+        <fieldset> 
+            <legend> Your message to us : </legend>
+            <p id = "userSummaryExplain"> </p> <!-- showing your message to us after you
+            have inputted it already -->
+        </fieldset>
+    </form>
+
+    <br> <br>
+    <button id = "reBook"> <a id="rebookLink" href="./indexCS.html"> Book Again </a></button>
+        
+    <script>
+        let form = document.getElementById("ratingForm");
+        let user_Ratings = [];
+            user_Ratings[0] = document.getElementById("userRating").value;
+            user_Ratings[1] = document.getElementById("userExplain").value;
+
+        form.addEventListener("submit", function(a) {
+            a.preventDefault;
+            storeUserRating();
+        })
+
+        function storeUserRating(){ // storing it in the local storage
+            let assocUserRatings = [{rating: user_Ratings[0], suggestion: user_Ratings[1]}];
+
+            localStorage.setItem("ratings", JSON.stringify(assocUserRatings));
+
+            alert('Thank you for your rating and suggestions. See you again next time!');
+        }
+
+        function summaryUserMessage () { // function for making the message of the user visible in a paragraph tag
+            x = document.getElementById("userExplain").value; 
+            document.getElementById("userSummaryExplain").innerHTML = x;
+        }
+
+    </script>
+</body>
+</html>
